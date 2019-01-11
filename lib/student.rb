@@ -60,7 +60,7 @@ class Student
       SELECT * FROM students WHERE grade = ?
     SQL
 
-    student_array = DB[:conn].execute(sql, self.grade).map do |row|
+    student_array.tap = DB[:conn].execute(sql, self.grade).map do |row|
       self.new_from_db(row)
     end.first
   end
